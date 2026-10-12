@@ -35,7 +35,8 @@
 % (choisissez des bornes larges, par exemple 0.0 a 1000.0)
 %
 % A COMPLETER (2 lignes) :
-
+var 0.0..1000000.0 : urban ;
+var 0.0..1000000.0 : cargo ;
 
 % --- ETAPE 2 : contraintes de ressources ------------------------------------
 % Ecrivez les 3 contraintes de ressources (une instruction "constraint" par
@@ -43,19 +44,22 @@
 % Syntaxe MiniZinc :  constraint <expression> <= <valeur>;
 %
 % A COMPLETER (3 lignes) :
-
+constraint urban * 4 + cargo * 6 <= 480 ;
+constraint urban * 6 + cargo * 15 <= 900 ;
+constraint urban * 2 + cargo * 2 <= 240 ;
 
 % --- ETAPE 3 : objectif ------------------------------------------------------
 % Maximisez la marge totale hebdomadaire = 120*u + 200*c.
 % Syntaxe MiniZinc :  solve maximize <expression>;
 %
 % A COMPLETER (1 ligne) :
+solve maximize urban * 120 + cargo * 200 ;
 
 
 % --- affichage (deja ecrit -- rien a modifier ici) --------------------------
 output [
-  "Urban = ", show(u), "\n",
-  "Cargo = ", show(c), "\n",
-  "marge = ", show(120.0*u + 200.0*c), " EUR/semaine\n",
+  "Urban = ", show(urban), "\n",
+  "Cargo = ", show(cargo), "\n",
+  "marge = ", show(120.0*urban + 200.0*cargo), " EUR/semaine\n",
   "(attendu : Urban = 75, Cargo = 30, marge = 15000 -- identique a TD1, Excel et Python)\n"
 ];
