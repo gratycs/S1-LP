@@ -1,0 +1,4 @@
+output let {array [int] of string: X_INTRODUCED_137_ = [if j==1 then "\n" else " " endif++show(cell[i,j]) | i in 1..N, j in 1..N]} in (["\"output\": {","\"default\": ",showJSON(concat(X_INTRODUCED_137_)),", \"raw\": ",showJSON(concat(X_INTRODUCED_137_)),"}, \"sections\": [\"default\", \"raw\"]"]);
+int: N = 9;
+array [1..81] of int: X_INTRODUCED_0_;
+array [1..N,1..N] of int: cell = array2d(1..9,1..9,X_INTRODUCED_0_);
