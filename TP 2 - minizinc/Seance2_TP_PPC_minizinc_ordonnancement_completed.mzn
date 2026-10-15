@@ -42,6 +42,7 @@ solve minimize makespan ;
 
 output [ noms[i] ++ " : début=" ++ show(s[i]) ++ "h, fin=" ++ show(e[i]) ++ "h\n" | i in 1..3 ]
       ++ ["makespan = ", show(makespan), "h"];
+      
 /*
 solution :
     Cargo : début=0h, fin=5h

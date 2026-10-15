@@ -1,3 +1,0 @@
-output let {array [int] of string: X_INTRODUCED_27_ = ["q = ",show(q)]} in (["\"output\": {","\"default\": ",showJSON(concat(X_INTRODUCED_27_)),", \"raw\": ",showJSON(concat(X_INTRODUCED_27_)),"}, \"sections\": [\"default\", \"raw\"]"]);
-int: n = 8;
-array [1..n] of int: q;
